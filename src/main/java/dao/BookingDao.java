@@ -18,8 +18,8 @@ public class BookingDao implements Dao<Booking>{
 
     private static final String GET_BY_PK = "SELECT * FROM bookings WHERE booking_id = ?";
     private static final String GET_ALL = "SELECT * FROM bookings";
-    private static final String INSERT = "INSERT INTO bookings(booking_id, user_id, status, values) VALUES (?, ?, ?, ?)";
-    private static final String UPDATE = "UPDATE bookings SET status = ?, values = ? WHERE booking_id = ? AND user_id = ?";
+    private static final String INSERT = "INSERT INTO bookings(booking_id, user_id, status) VALUES (?, ?, ?)";
+    private static final String UPDATE = "UPDATE bookings SET status = ? WHERE booking_id = ?";
     //user_id ???? Where o update
     private static final String DELETE = "DELETE FROM bookings WHERE booking_id = ?";
     

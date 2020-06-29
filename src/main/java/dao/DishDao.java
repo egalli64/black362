@@ -19,7 +19,7 @@ public class DishDao implements Dao<Dish>{
 	private static final String GET_BY_PK = "SELECT * FROM dishes WHERE dish_id = ?";
 	private static final String GET_ALL = "SELECT * FROM dishes";
 	private static final String INSERT = "INSERT INTO dishes(dish_id, name, prices, description) VALUES (?, ?, ?, ?)";
-	private static final String UPDATE = "UPDATE dishes SET name = ?, price = ?, description = ? WHERE dish_id = ?";
+	private static final String UPDATE = "UPDATE dishes SET name = ?, prices = ?, description = ? WHERE dish_id = ?";
 	private static final String DELETE = "DELETE FROM dishes WHERE dish_id = ?";
 
 	@Override
