@@ -1,12 +1,22 @@
 package dao;
 
 public class Dish {
+	
 	private int id;
 	private String name;
 	private double price;
 	private String description;
 	
-	
+	public Dish() {
+    }
+
+    public Dish(int id, String name, double price, String description) {
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.description = description;
+	}
+    
 	protected int getID() {
 		return id;
 	}

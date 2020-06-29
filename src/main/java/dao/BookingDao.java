@@ -16,13 +16,12 @@ public class BookingDao implements Dao<Booking>{
 	
 	private static Logger logger = LoggerFactory.getLogger(BookingDao.class);
 
-    private static final String GET_BY_PK = "SELECT booking_id, user_id, status, values FROM bookings WHERE booking_id = ?";
-    private static final String GET_ALL = "SELECT booking_id, user_id, status, values FROM bookings";
+    private static final String GET_BY_PK = "SELECT * FROM bookings WHERE booking_id = ?";
+    private static final String GET_ALL = "SELECT * FROM bookings";
     private static final String INSERT = "INSERT INTO bookings(booking_id, user_id, status, values) VALUES (?, ?, ?, ?)";
     private static final String UPDATE = "UPDATE bookings SET status = ?, values = ? WHERE booking_id = ? AND user_id = ?";
     //user_id ???? Where o update
     private static final String DELETE = "DELETE FROM bookings WHERE booking_id = ?";
-
     
 //  booking_id integer primary key auto_increment,
 //	user_id foreign key(user_id) references users (user_id),
@@ -51,7 +50,7 @@ public class BookingDao implements Dao<Booking>{
     public Optional<Booking> get(int bookingId) {
         try (Connection conn = Connector.getConnection(); //
                 PreparedStatement ps = conn.prepareStatement(GET_BY_PK)) {
-            ps.setLong(1, bookingId);
+            ps.setInt(1, bookingId);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     Booking my = new Booking(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4));
@@ -68,7 +67,7 @@ public class BookingDao implements Dao<Booking>{
     public Booking legacyGet(int bookingId) {
         try (Connection conn = Connector.getConnection(); //
                 PreparedStatement ps = conn.prepareStatement(GET_BY_PK)) {
-            ps.setLong(1, bookingId);
+            ps.setInt(1, bookingId);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     return new Booking(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4));
