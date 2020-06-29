@@ -22,7 +22,6 @@ public class BookingDao implements Dao<Booking>{
     private static final String UPDATE = "UPDATE bookings SET status = ?, values = ? WHERE booking_id = ? AND user_id = ?";
     //user_id ???? Where o update
     private static final String DELETE = "DELETE FROM bookings WHERE booking_id = ?";
-
     
 //  booking_id integer primary key auto_increment,
 //	user_id foreign key(user_id) references users (user_id),
