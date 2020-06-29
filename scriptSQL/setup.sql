@@ -1,5 +1,5 @@
 
-use restaurant;
+use black362;
 
 -- cleanup and control if tables exist   
 drop table if exists users;
