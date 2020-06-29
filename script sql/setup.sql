@@ -1,3 +1,16 @@
+drop user if exists me;
+drop schema if exists restaurant;
+
+create user me identified by '12345678';
+create schema restaurant;
+--  run it as root
+grant all privileges on restaurant.* to restaurant;
+grant alter routine on restaurant.* to restaurant;
+
+show schemas;
+
+
+
 use restaurant;
 
 -- cleanup
