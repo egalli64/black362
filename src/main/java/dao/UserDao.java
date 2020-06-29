@@ -1,6 +1,8 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -23,7 +25,21 @@ public class UserDao implements Dao<User> {
 
 	@Override
 	public Optional<User> get(int id) {
-		return null;
+		try (Connection conn = Connector.getConnection(); //
+                PreparedStatement ps = conn.prepareStatement(GET_BY_PK)) {
+            ps.setLong(1, id);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    LocalDate birthDate = rs.getDate(4).toLocalDate();
+                    User user = new User(rs.getInt(1), rs.getString(2), rs.getString(3), birthDate, rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getInt(11));
+                    return Optional.of(user);
+                }
+            }
+        } catch (SQLException se) {
+            logger.error("Can't get user " + id, se);
+        }
+
+        return Optional.empty();
 	}
 
 	@Override
@@ -34,8 +50,8 @@ public class UserDao implements Dao<User> {
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(GET_ALL)) {
 			while (rs.next()) {
-				LocalDate birth_date = rs.getDate(4).toLocalDate();
-				User user = new User(rs.getInt(1), rs.getString(2), rs.getString(3), birth_date, rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getInt(11));
+				LocalDate birthDate = rs.getDate(4).toLocalDate();
+				User user = new User(rs.getInt(1), rs.getString(2), rs.getString(3), birthDate, rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getInt(11));
 				results.add(user);
 			}
 		} catch (SQLException se) {
@@ -46,8 +62,24 @@ public class UserDao implements Dao<User> {
 	}
 
 	@Override
-	public void save(User t) {
-		// TODO Auto-generated method stub
+	public void save(User user) {
+		try (Connection conn = Connector.getConnection();
+                PreparedStatement ps = conn.prepareStatement(INSERT)) {
+			ps.setInt(1, user.getID());
+			ps.setString(2, user.getFirstName());
+			ps.setString(3, user.getLastName());
+			ps.setDate(4, Date.valueOf(user.getBirthDate()));
+			ps.setString(5, user.getEmail());
+			ps.setString(6, user.getTelephone());
+			ps.setString(7, user.getUsername());
+			ps.setString(8, user.getPassword());
+			ps.setString(9, user.getCity());
+			ps.setString(10, user.getAddress());
+			ps.setInt(11, user.getPostcode());
+			
+		} catch (SQLException se) {
+            logger.error("Can't save user " + user.getID(), se);
+        }
 
 	}
 
@@ -58,8 +90,16 @@ public class UserDao implements Dao<User> {
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
-
+		try (Connection conn = Connector.getConnection(); //
+                PreparedStatement ps = conn.prepareStatement(DELETE)) {
+            ps.setInt(1, id);
+            int count = ps.executeUpdate();
+            if (count != 1) {
+                logger.warn("Deleted " + count + " lines for " + id);
+            }
+        } catch (SQLException se) {
+            logger.error("Can't delete user " + id, se);
+        }
 	}
 
 }
