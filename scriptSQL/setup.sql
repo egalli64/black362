@@ -61,10 +61,10 @@ use black362;
 
 -- insert users
 insert into users(first_name,last_name,birth_date,email,telephone,username,password,city,address,postcode) 
-values ('Giuseppe','Conti',str_to_date('27-FEB-04','%d-%b-%y'),'Giuseppe99@hotmail.com','3229856956','GiuGiup','1234Giuseppe','Milano','Viale Lodovico Scarampo','20149');
+values ('Giuseppe','Conti',str_to_date('11-01-2000','%d-%m-%Y'),'Giuseppe99@hotmail.com','3229856956','GiuGiup','1234Giuseppe','Milano','Viale Lodovico Scarampo','20149');
 
 insert into users(first_name,last_name,birth_date,email,telephone,username,password,city,address,postcode) 
-values ('Francesco','Russo',str_to_date('17-Mar-1964','%d-%b-%Y'),'russoFra123.@hotmail.com','0529856956','WinRuss','09451opq','Milano','Via Monte Rosa 91','20149');
+values ('Francesco','Russo',str_to_date('03-11-1999','%d-%m-%Y'),'russoFra123.@hotmail.com','0529856956','WinRuss','09451opq','Milano','Via Monte Rosa 91','20149');
 
 insert into users(first_name,last_name,birth_date,email,telephone,username,password,city,address,postcode) 
 values ('Federica','Testa',str_to_date('11-11-1999','%d-%m-%Y'),'Fede.red@yahoo.com','090192956','Fedeee','1234AAA','Milano','Via Breguzzo 2','20148');
