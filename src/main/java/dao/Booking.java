@@ -1,6 +1,7 @@
 package dao;
 
 public class Booking {
+	
 	private int userID,
 				id;
 	private String status,
@@ -10,6 +11,24 @@ public class Booking {
 								SENT = "SENT",
 								PROCESSING = "PROCESSING";
 	
+	public Booking() {
+    }
+    
+    public Booking(int userID, String status, String values) {
+    	this(0, userID, status, values);
+    }
+    
+    public Booking(String status, String values) {
+    	this(0, 0, status, values);
+    }
+
+	public Booking(int id, int userID, String status, String values) {
+		super();
+		this.id = id;
+		this.userID = userID;
+		this.status = status;
+		this.values = values;
+	}
 	protected int getUserID() {
 		return userID;
 	}
