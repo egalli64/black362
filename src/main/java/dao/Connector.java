@@ -9,9 +9,9 @@ import org.slf4j.LoggerFactory;
 public class Connector {
     private static Logger logger = LoggerFactory.getLogger(Connector.class);
 
-    private static final String URL = "";	//TODO
-    private static final String USER = "";	//TODO
-    private static final String PASSWORD = "";	//TODO
+    private static final String URL = "jdbc:mysql://localhost:3306/black362?serverTimezone=Europe/Rome";
+    private static final String USER = "black362";
+    private static final String PASSWORD = "password";
 
     public static Connection getConnection() {
         try {
