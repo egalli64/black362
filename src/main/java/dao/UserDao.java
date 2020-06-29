@@ -20,7 +20,7 @@ public class UserDao implements Dao<User> {
 	private static final String GET_BY_PK = "SELECT * FROM users WHERE user_id = ?";
 	private static final String GET_ALL = "SELECT * FROM users";
 	private static final String INSERT = "INSERT INTO users(first_name, last_name, birth_date, email, telephone, username, password, city, address, postcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-//  private static final String UPDATE = "UPDATE coders SET first_name = ?, last_name = ?, hire_date = ?, salary = ? WHERE coder_id = ?";
+	private static final String UPDATE = "UPDATE coders SET email = ?, telephone = ?, password = ?, city = ?, address = ?, postcode = ? WHERE coder_id = ?";
 	private static final String DELETE = "DELETE FROM users WHERE user_id = ?";
 
 	@Override
@@ -84,8 +84,23 @@ public class UserDao implements Dao<User> {
 	}
 
 	@Override
-	public void update(User t) {
-		// TODO Auto-generated method stub
+	public void update(User user) {
+		try (Connection conn = Connector.getConnection(); //
+                PreparedStatement ps = conn.prepareStatement(UPDATE)) {
+            ps.setString(1, user.getEmail());
+            ps.setString(2, user.getTelephone());
+            ps.setString(3, user.getPassword());
+            ps.setString(4, user.getCity());
+            ps.setString(5, user.getAddress());
+            ps.setInt(6,  user.getPostcode());
+            ps.setInt(7, user.getID());
+            int count = ps.executeUpdate();
+            if (count != 1) {
+                logger.warn("Updated " + count + " lines for " + user);
+            }
+        } catch (SQLException se) {
+            logger.error("Can't update user " + user.getID(), se);
+        }
 	}
 
 	@Override
@@ -101,5 +116,4 @@ public class UserDao implements Dao<User> {
             logger.error("Can't delete user " + id, se);
         }
 	}
-
 }
