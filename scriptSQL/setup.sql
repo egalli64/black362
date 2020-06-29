@@ -7,6 +7,7 @@ drop table if exists admins;
 drop table if exists bookings;
 drop table if exists dishes;
 drop table if exists address;
+drop table if exists dishList;
 
 create table users(
 	user_id integer primary key auto_increment,
@@ -33,14 +34,23 @@ create table bookings(
 	booking_id integer primary key auto_increment,
 	user_id  integer,
 	status varchar(30),
-	dishList text,
 	foreign key(user_id) references users (user_id)
 );
+
 
 create table dishes(
 	dish_id integer primary key auto_increment,
 	name varchar(50),
 	prices decimal(5,2), 
 	description varchar(500)
+);
+
+create table dishList(
+	dishList_id integer primary key auto_increment,
+	booking_id integer,
+    dish_id integer,
+	number_dish integer,
+    foreign key(dish_id) references dishes (dish_id),
+    foreign key(booking_id) references bookings (booking_id)
 );
 commit
