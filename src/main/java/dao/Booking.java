@@ -13,14 +13,6 @@ public class Booking {
 	
 	public Booking() {
     }
-    
-    public Booking(int userID, String status, String values) {
-    	this(0, userID, status, values);
-    }
-    
-    public Booking(String status, String values) {
-    	this(0, 0, status, values);
-    }
 
 	public Booking(int id, int userID, String status, String values) {
 		super();
@@ -29,6 +21,7 @@ public class Booking {
 		this.status = status;
 		this.values = values;
 	}
+    
 	protected int getUserID() {
 		return userID;
 	}
