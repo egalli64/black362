@@ -6,7 +6,6 @@ public class Booking {
 	private String status,
 					values;
 	
-	
 	public final static String DELIVERED = "DELIVERED",
 								SENT = "SENT",
 								PROCESSING = "PROCESSING";

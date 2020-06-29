@@ -13,8 +13,8 @@ public class User extends GenericUser {
 				address;
 	private int postcode;
 	
-	public User(int id, String firstName, String lastName, String username, String password, String email, 
-				LocalDate birthDate, String telephone, String city, String address, int postcode) {
+	public User(int id, String firstName, String lastName, LocalDate birthDate, String email, String telephone,
+				String username, String password, String city, String address, int postcode) {
 		super();
 		
 		this.id = id;
