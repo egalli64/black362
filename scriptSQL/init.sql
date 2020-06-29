@@ -1,6 +1,7 @@
 
 drop schema if exists black362;
 drop user if exists black362;
+
 create user black362 identified by 'password';
 create schema black362;
 
