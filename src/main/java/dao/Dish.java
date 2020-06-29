@@ -17,34 +17,34 @@ public class Dish {
 		this.description = description;
 	}
     
-	protected int getID() {
+    public int getID() {
 		return id;
 	}
-	protected void setID(int id) {
+	public void setID(int id) {
 		this.id = id;
 	}
 	
 	
-	protected String getName() {
+	public String getName() {
 		return name;
 	}
-	protected void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 	
 	
-	protected double getPrice() {
+	public double getPrice() {
 		return price;
 	}
-	protected void setPrice(double price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 	
 	
-	protected String getDescription() {
+	public String getDescription() {
 		return description;
 	}
-	protected void setDescription(String description) {
+	public void setDescription(String description) {
 		this.description = description;
 	}
 }

@@ -22,31 +22,31 @@ public class Booking {
 		this.values = values;
 	}
     
-	protected int getUserID() {
+	public int getUserID() {
 		return userID;
 	}
-	protected void setUserID(int userID) {
+	public void setUserID(int userID) {
 		this.userID = userID;
 	}
 	
-	protected int getID() {
+	public int getID() {
 		return id;
 	}
-	protected void setID(int id) {
+	public void setID(int id) {
 		this.id = id;
 	}
 	
-	protected String getStatus() {
+	public String getStatus() {
 		return status;
 	}
-	protected void setStatus(String status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 	
-	protected String getValues() {
+	public String getValues() {
 		return values;
 	}
-	protected void setValues(String values) {
+	public void setValues(String values) {
 		this.values = values;
 	}
 }

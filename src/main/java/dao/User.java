@@ -3,7 +3,6 @@ package dao;
 import java.time.LocalDate;
 
 public class User extends GenericUser {
-	private int id;
 	private String firstName,
 					lastName;
 	private LocalDate birthDate;
@@ -32,75 +31,66 @@ public class User extends GenericUser {
 		this.postcode = postcode;
 	}
 	
-	
-	protected int getID() {
-		return id;
-	}
-	protected void setID(int id) {
-		this.id = id;
-	}
-	
-	
-	protected String getFirstName() {
+	public String getFirstName() {
 		return firstName;
 	}
-	protected void setFirstName(String firstName) {
+	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 	
 	
-	protected String getLastName() {
+	public String getLastName() {
 		return lastName;
 	}
-	protected void setLastName(String lastName) {
+	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 	
 	
-	protected LocalDate getBirthDate() {
+	public LocalDate getBirthDate() {
 		return birthDate;
 	}
-	protected void setBirthDate(LocalDate birthDate) {
+	public void setBirthDate(LocalDate birthDate) {
 		this.birthDate = birthDate;
 	}
 	
 	
-	protected String getEmail() {
+	public String getEmail() {
 		return email;
 	}
-	protected void setEmail(String email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 	
 	
-	protected String getTelephone() {
+	public String getTelephone() {
 		return telephone;
 	}
-	protected void setTelephone(String telephone) {
+	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
 	
 	
-	protected String getCity() {
+	public String getCity() {
 		return city;
 	}
-	protected void setCity(String city) {
+	public void setCity(String city) {
 		this.city = city;
 	}
 	
 	
-	protected String getAddress() {
+	public String getAddress() {
 		return address;
 	}
-	protected void setAddress(String address) {
+	public void setAddress(String address) {
 		this.address = address;
 	}
 	
 	
-	protected int getPostcode() {
+	public int getPostcode() {
 		return postcode;
 	}
-	protected void setPostcode(int postcode) {
+	public void setPostcode(int postcode) {
 		this.postcode = postcode;
 	}	
 }
