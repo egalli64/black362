@@ -7,19 +7,19 @@ create schema restaurant;
 grant all privileges on restaurant.* to restaurant;
 grant alter routine on restaurant.* to restaurant;
 
-show schemas;
+-- show schemas;
 
 
 
 use restaurant;
 
 -- cleanup
+
 drop table if exists users;
 drop table if exists admins;
 drop table if exists bookings;
 drop table if exists dishes;
 drop table if exists address;
-
 
 create table users(
 	user_id integer primary key auto_increment,
@@ -28,8 +28,8 @@ create table users(
 	birth_date date,
 	email varchar(50) unique,
 	telephone int(30), 
-	username varchar(35),
-	password varchar(35),
+	username varchar(35) not null,
+	password varchar(35) not null,
 	city varchar(35),
 	address varchar(30),
 	postcode integer
