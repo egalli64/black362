@@ -1,20 +1,21 @@
-drop user if exists me;
+-- create schema SQL
+
+-- drop user if exists resraurant;
+
 drop schema if exists restaurant;
 
-create user me identified by '12345678';
+create user restaurant identified by '12345678';
 create schema restaurant;
---  run it as root
+
+--  run it with all privileges 
 grant all privileges on restaurant.* to restaurant;
 grant alter routine on restaurant.* to restaurant;
-
--- show schemas;
 
 
 
 use restaurant;
 
--- cleanup
-
+-- cleanup and control if tables exist   
 drop table if exists users;
 drop table if exists admins;
 drop table if exists bookings;
@@ -32,7 +33,7 @@ create table users(
 	password varchar(35) not null,
 	city varchar(35),
 	address varchar(30),
-	postcode integer
+	postcode varchar(5)
 );
 
 
@@ -40,7 +41,6 @@ create table admins(
 	admin_id integer primary key auto_increment,
 	username varchar(30) not null,
 	password varchar(30) not null
-    
 );
 
 create table bookings(
@@ -53,8 +53,8 @@ create table bookings(
 
 create table dishes(
 	dish_id integer primary key auto_increment,
-	name varchar(30),
-	prices double,
-	description text
+	name varchar(50),
+	prices decimal(5,2), 
+	description varchar(500)
 );
 commit
