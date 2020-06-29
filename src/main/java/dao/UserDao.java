@@ -26,20 +26,22 @@ public class UserDao implements Dao<User> {
 	@Override
 	public Optional<User> get(int id) {
 		try (Connection conn = Connector.getConnection(); //
-                PreparedStatement ps = conn.prepareStatement(GET_BY_PK)) {
-            ps.setLong(1, id);
-            try (ResultSet rs = ps.executeQuery()) {
-                if (rs.next()) {
-                    LocalDate birthDate = rs.getDate(4).toLocalDate();
-                    User user = new User(rs.getInt(1), rs.getString(2), rs.getString(3), birthDate, rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getInt(11));
-                    return Optional.of(user);
-                }
-            }
-        } catch (SQLException se) {
-            logger.error("Can't get user " + id, se);
-        }
+				PreparedStatement ps = conn.prepareStatement(GET_BY_PK)) {
+			ps.setLong(1, id);
+			try (ResultSet rs = ps.executeQuery()) {
+				if (rs.next()) {
+					LocalDate birthDate = rs.getDate(4).toLocalDate();
+					User user = new User(rs.getInt(1), rs.getString(2), rs.getString(3), birthDate, rs.getString(5),
+							rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10),
+							rs.getInt(11));
+					return Optional.of(user);
+				}
+			}
+		} catch (SQLException se) {
+			logger.error("Can't get user " + id, se);
+		}
 
-        return Optional.empty();
+		return Optional.empty();
 	}
 
 	@Override
@@ -51,7 +53,9 @@ public class UserDao implements Dao<User> {
 				ResultSet rs = stmt.executeQuery(GET_ALL)) {
 			while (rs.next()) {
 				LocalDate birthDate = rs.getDate(4).toLocalDate();
-				User user = new User(rs.getInt(1), rs.getString(2), rs.getString(3), birthDate, rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getInt(11));
+				User user = new User(rs.getInt(1), rs.getString(2), rs.getString(3), birthDate, rs.getString(5),
+						rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10),
+						rs.getInt(11));
 				results.add(user);
 			}
 		} catch (SQLException se) {
@@ -63,8 +67,7 @@ public class UserDao implements Dao<User> {
 
 	@Override
 	public void save(User user) {
-		try (Connection conn = Connector.getConnection();
-                PreparedStatement ps = conn.prepareStatement(INSERT)) {
+		try (Connection conn = Connector.getConnection(); PreparedStatement ps = conn.prepareStatement(INSERT)) {
 			ps.setInt(1, user.getID());
 			ps.setString(2, user.getFirstName());
 			ps.setString(3, user.getLastName());
@@ -76,44 +79,43 @@ public class UserDao implements Dao<User> {
 			ps.setString(9, user.getCity());
 			ps.setString(10, user.getAddress());
 			ps.setInt(11, user.getPostcode());
-			
-		} catch (SQLException se) {
-            logger.error("Can't save user " + user.getID(), se);
-        }
 
+		} catch (SQLException se) {
+			logger.error("Can't save user " + user.getID(), se);
+		}
 	}
 
 	@Override
 	public void update(User user) {
 		try (Connection conn = Connector.getConnection(); //
-                PreparedStatement ps = conn.prepareStatement(UPDATE)) {
-            ps.setString(1, user.getEmail());
-            ps.setString(2, user.getTelephone());
-            ps.setString(3, user.getPassword());
-            ps.setString(4, user.getCity());
-            ps.setString(5, user.getAddress());
-            ps.setInt(6,  user.getPostcode());
-            ps.setInt(7, user.getID());
-            int count = ps.executeUpdate();
-            if (count != 1) {
-                logger.warn("Updated " + count + " lines for " + user);
-            }
-        } catch (SQLException se) {
-            logger.error("Can't update user " + user.getID(), se);
-        }
+				PreparedStatement ps = conn.prepareStatement(UPDATE)) {
+			ps.setString(1, user.getEmail());
+			ps.setString(2, user.getTelephone());
+			ps.setString(3, user.getPassword());
+			ps.setString(4, user.getCity());
+			ps.setString(5, user.getAddress());
+			ps.setInt(6, user.getPostcode());
+			ps.setInt(7, user.getID());
+			int count = ps.executeUpdate();
+			if (count != 1) {
+				logger.warn("Updated " + count + " lines for " + user);
+			}
+		} catch (SQLException se) {
+			logger.error("Can't update user " + user.getID(), se);
+		}
 	}
 
 	@Override
 	public void delete(int id) {
 		try (Connection conn = Connector.getConnection(); //
-                PreparedStatement ps = conn.prepareStatement(DELETE)) {
-            ps.setInt(1, id);
-            int count = ps.executeUpdate();
-            if (count != 1) {
-                logger.warn("Deleted " + count + " lines for " + id);
-            }
-        } catch (SQLException se) {
-            logger.error("Can't delete user " + id, se);
-        }
+				PreparedStatement ps = conn.prepareStatement(DELETE)) {
+			ps.setInt(1, id);
+			int count = ps.executeUpdate();
+			if (count != 1) {
+				logger.warn("Deleted " + count + " lines for " + id);
+			}
+		} catch (SQLException se) {
+			logger.error("Can't delete user " + id, se);
+		}
 	}
 }
