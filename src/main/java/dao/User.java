@@ -2,23 +2,41 @@ package dao;
 
 import java.time.LocalDate;
 
-public class User {
+public class User extends GenericUser {
 	private int id;
 	private String firstName,
 					lastName;
 	private LocalDate birthDate;
 	private String email,
 				telephone,
-				username,
 				city,
 				address;
 	private int postcode;
 	
+	public User(int id, String firstName, String lastName, String username, String password, String email, 
+				LocalDate birthDate, String telephone, String city, String address, int postcode) {
+		super();
+		
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		
+		this.birthDate = birthDate;	//Conversion from String?
+		this.telephone = telephone;
+		this.city = city;
+		this.address = address;
+		this.postcode = postcode;
+	}
 	
-	protected int getId() {
+	
+	protected int getID() {
 		return id;
 	}
-	protected void setId(int id) {
+	protected void setID(int id) {
 		this.id = id;
 	}
 	
@@ -60,14 +78,6 @@ public class User {
 	}
 	protected void setTelephone(String telephone) {
 		this.telephone = telephone;
-	}
-	
-	
-	protected String getUsername() {
-		return username;
-	}
-	protected void setUsername(String username) {
-		this.username = username;
 	}
 	
 	
