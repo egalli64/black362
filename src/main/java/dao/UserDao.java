@@ -22,12 +22,14 @@ public class UserDao implements Dao<User> {
 	private static final String INSERT = "INSERT INTO users(first_name, last_name, birth_date, email, telephone, username, password, city, address, postcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	private static final String UPDATE = "UPDATE coders SET email = ?, telephone = ?, password = ?, city = ?, address = ?, postcode = ? WHERE coder_id = ?";
 	private static final String DELETE = "DELETE FROM users WHERE user_id = ?";
+	
+	private static final String GET_CHECK = "SELECT email, username FROM users";
 
 	@Override
 	public Optional<User> get(int id) {
 		try (Connection conn = Connector.getConnection(); //
 				PreparedStatement ps = conn.prepareStatement(GET_BY_PK)) {
-			ps.setLong(1, id);
+			ps.setInt(1, id);
 			try (ResultSet rs = ps.executeQuery()) {
 				if (rs.next()) {
 					LocalDate birthDate = rs.getDate(4).toLocalDate();
@@ -67,7 +69,9 @@ public class UserDao implements Dao<User> {
 
 	@Override
 	public void save(User user) {
-		try (Connection conn = Connector.getConnection(); PreparedStatement ps = conn.prepareStatement(INSERT)) {
+		try (Connection conn = Connector.getConnection(); 
+			PreparedStatement ps = conn.prepareStatement(INSERT)) {
+			
 			ps.setString(1, user.getFirstName());
 			ps.setString(2, user.getLastName());
 			ps.setDate(3, Date.valueOf(user.getBirthDate()));
@@ -78,6 +82,8 @@ public class UserDao implements Dao<User> {
 			ps.setString(8, user.getCity());
 			ps.setString(9, user.getAddress());
 			ps.setInt(10, user.getPostcode());
+			
+			ps.executeUpdate();
 
 		} catch (SQLException se) {
 			logger.error("Can't save user " + user.getID(), se);

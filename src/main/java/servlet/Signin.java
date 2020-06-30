@@ -24,9 +24,13 @@ public class Signin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String dateString = request.getParameter("date2");
 		LocalDate birthDate = LocalDate.parse(dateString, DateTimeFormatter.ISO_LOCAL_DATE);
+		
 		User user = new User(request.getParameter("firstName"), request.getParameter("lastName"), birthDate, request.getParameter("email"), request.getParameter("telephone"), request.getParameter("username"), request.getParameter("password"), request.getParameter("city"), request.getParameter("address"), Integer.parseInt(request.getParameter("cap")));
 		UserDao userDao = new UserDao();
 		userDao.save(user);
+		
+		request.setAttribute("user", user);
+		
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/result.jsp");
         rd.forward(request, response);

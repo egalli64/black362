@@ -19,7 +19,7 @@
       <h5 class="card-title">Inserisci i tuoi dati per accedere</h5>
       <div class="form-group">
         <label for="exampleDropdownFormEmail2">Username</label>
-        <input type="username" name="username" class="form-control" id="exampleDropdownFormEmail2" placeholder="Mario321" required>
+        <input type="text" name="username" class="form-control" id="exampleDropdownFormEmail2" placeholder="Mario321" required>
       </div>
       <div class="form-group">
         <label for="exampleDropdownFormPassword2">Password</label>
