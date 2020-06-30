@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="Signin.css">
  <meta charset="utf-8">
  
  <title>Registrazione</title>
@@ -12,16 +13,11 @@
 
 <body>
     
-    <div class="card">
-        <h5 class="card-header">Ristorante Il Baco - Registrazione</h5>
-        <div class="card-body">
-          <h5 class="card-title">Inserisci i tuoi dati personali per completare la registrazione</h5>
-          <p class="card-text">Sei già registrato? Clicca sul link qui sotto.</p>
-          <a href="Login.html">Effettua il login</a>
-        </div>
-      </div>
-
-    <div class= "container mt-5"> 
+  <div>
+    <h2><a href="Ristorante.html">Ristorante Il Baco</a></h2>
+  </div>
+  
+    <div class= "container mt-5 containerSignin"> 
         <form action="/signin">
             <div class="form-row">
 
@@ -61,7 +57,10 @@
                 <label for="inputPassword4">Password</label>
                 <input type="password" class="form-control" id="inputPassword4">
               </div>
-              
+              <div class="form-group col-md-6">
+                <label for="inputCity">Città</label>
+                <input type="text" class="form-control" id="inputCity">
+              </div>
             </div>
 
             <div class="form-group">
@@ -70,18 +69,16 @@
             </div>
 
             <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputCity">Città</label>
-                <input type="text" class="form-control" id="inputCity">
-              </div>
+
 
               <div class="form-group col-md-2">
-                <label for="inputZip">Codice postale</label>
+                <label for="inputZip">CAP</label>
                 <input type="text" class="form-control" id="inputZip">
               </div>
 
             </div>
-            <button type="button" class="btn btn-link">Registrati</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block">Registrati</button>
+                    <div>sei già registrato? <a href="Login.html">effettua login</a></div>
           </form>     
     </div>
 
