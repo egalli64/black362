@@ -26,7 +26,7 @@
 			<a href="Ristorante.html">Ristorante Il Baco</a>
 		</h2>
 	</div>
- 			<div>
+ 			<div class="containerResult">
 				<c:if test="${param.x =='a'}">
 					<h5>success </h5>
 				</c:if>

@@ -1,0 +1,10 @@
+ .classMessage{
+ 	text-align:center;
+    margin: 0 auto;
+    width: 350px;
+    padding:35px 28px 50px 28px;
+    border-style:solid;
+    border-color: rgb(175, 172, 172);
+    border-width: 1px ;
+    border-radius:3px;
+ }
