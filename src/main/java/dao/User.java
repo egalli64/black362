@@ -31,6 +31,11 @@ public class User extends GenericUser {
 		this.postcode = postcode;
 	}
 	
+	public User(String firstName, String lastName, LocalDate birthDate, String email, String telephone,
+					String username, String password, String city, String address, int postcode) {
+		this(0, firstName, lastName, birthDate, email, telephone, username, password, city, address, postcode);
+	}
+	
 	public String getFirstName() {
 		return firstName;
 	}
