@@ -31,7 +31,6 @@ public class Signin extends HttpServlet {
 		
 		request.setAttribute("user", user);
 		
-		
 		RequestDispatcher rd = request.getRequestDispatcher("/result.jsp");
         rd.forward(request, response);
 	}

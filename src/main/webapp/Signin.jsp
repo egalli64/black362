@@ -51,17 +51,17 @@
 
 				<div class="form-group col-md-6">
 					<label for="inputusername">Username</label> <input type="text"
-						class="form-control" id="inputusername" name="username" title="8-12 caratteri alfa-numerici"  
+						class="form-control" id="inputusername" name="username" title="Da 8 a 12 caratteri alfanumerici."  
 						pattern="[A-Za-z0-9]{8,12}" required>
 				</div>
 
 				<div class="form-group col-md-6">
-					<label> Data di nascita</label> <input id="date2" type="date" name="date2" value="2020-30-06" min="1900-01-01" max="2020-30-06">
+					<label> Data di nascita</label> <input id="date2" type="date" name="date2" value="2020-30-06" min="1900-01-01" max="2020-30-06" required>
 				</div>
 
 				<div class="form-group col-md-6">
 					<label for="inputnumber">Numero di telefono</label> <input
-						type="text" class="form-control" id="inputnumber" title="solo i numeri" pattern="\d{10,11}" name="telephone">
+						type="text" class="form-control" id="inputnumber" title="Da 9 a 10 cifre." pattern="\d{9,10}" name="telephone">
 				</div>
 
 				<div class="form-group col-md-6">
@@ -71,17 +71,17 @@
 
 				<div class="form-group col-md-6">
 					<label for="inputPassword4">Password</label> <input type="password"
-						class="form-control" id="inputPassword4" name="password" title="caratteri alfa-numerici e simboli:. _ + - @ $ ! ? &" pattern="[A-Za-z0-9._+-@$!?&]{8,15}" required>
+						class="form-control" id="inputPassword4" name="password" title="Da 8 a 12 caratteri alfanumerici e i seguenti simboli: . _ + - @ $ ! ? &" pattern="[A-Za-z0-9._+-@$!?&]{8,15}" required>
 				</div>
 				<div class="form-group col-md-6">
 					<label for="inputCity">Città </label> <input type="text"
-						class="form-control" id="inputCity" name="city">
+						class="form-control" id="inputCity" name="city" required>
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label for="inputAddress">Indirizzo</label> <input type="text"
-					class="form-control" id="inputAddress" name="address">
+					class="form-control" id="inputAddress" name="address" required>
 			</div>
 
 			<div class="form-row">
@@ -89,7 +89,7 @@
 
 				<div class="form-group col-md-2">
 					<label for="inputZip">CAP</label> <input type="text"
-						class="form-control" id="inputZip" title="solo cinque numeri" pattern="\d{5}" name="cap">
+						class="form-control" id="inputZip" title="5 cifre" pattern="\d{5}" name="cap" required>
 				</div>
 
 			</div>
