@@ -95,7 +95,7 @@
 			</div>
 			<button type="submit" class="btn btn-primary btn-lg btn-block">Registrati</button>
 			<div>
-				Sei già registrato ? <a href="Login.jsp">Effettua login</a>
+				Sei già registrato? <a href="Login.jsp">Effettua login</a>
 			</div>
 
 		</form>
