@@ -54,7 +54,6 @@
 						class="form-control" id="inputusername" name="username">
 				</div>
 
-
 				<div class="form-group col-md-6">
 					<label> Data di nascita</label> <input id="date2" type="date" name="date2" value="2020-30-06" min="1900-01-01" max="2020-30-06">
 				</div>
@@ -95,7 +94,7 @@
 			</div>
 			<button type="submit" class="btn btn-primary btn-lg btn-block">Registrati</button>
 			<div>
-				sei già  registrato? <a href="Login.jsp">effettua login</a>
+				Sei già registrato? <a href="Login.jsp">Effettua login</a>
 			</div>
 
 		</form>
