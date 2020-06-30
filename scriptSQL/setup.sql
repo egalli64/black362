@@ -20,7 +20,7 @@ create table users(
 	birth_date date,
 	email varchar(50) unique,
 	telephone varchar(30), 
-	username varchar(35) not null,
+	username varchar(35) not null unique,
 	password varchar(35) not null,
 	city varchar(35),
 	address varchar(30),

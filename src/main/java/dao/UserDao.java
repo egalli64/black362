@@ -78,6 +78,7 @@ public class UserDao implements Dao<User> {
 			ps.setString(8, user.getCity());
 			ps.setString(9, user.getAddress());
 			ps.setInt(10, user.getPostcode());
+			ps.executeUpdate();
 
 		} catch (SQLException se) {
 			logger.error("Can't save user " + user.getID(), se);
