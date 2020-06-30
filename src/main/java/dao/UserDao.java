@@ -68,17 +68,16 @@ public class UserDao implements Dao<User> {
 	@Override
 	public void save(User user) {
 		try (Connection conn = Connector.getConnection(); PreparedStatement ps = conn.prepareStatement(INSERT)) {
-			ps.setInt(1, user.getID());
-			ps.setString(2, user.getFirstName());
-			ps.setString(3, user.getLastName());
-			ps.setDate(4, Date.valueOf(user.getBirthDate()));
-			ps.setString(5, user.getEmail());
-			ps.setString(6, user.getTelephone());
-			ps.setString(7, user.getUsername());
-			ps.setString(8, user.getPassword());
-			ps.setString(9, user.getCity());
-			ps.setString(10, user.getAddress());
-			ps.setInt(11, user.getPostcode());
+			ps.setString(1, user.getFirstName());
+			ps.setString(2, user.getLastName());
+			ps.setDate(3, Date.valueOf(user.getBirthDate()));
+			ps.setString(4, user.getEmail());
+			ps.setString(5, user.getTelephone());
+			ps.setString(6, user.getUsername());
+			ps.setString(7, user.getPassword());
+			ps.setString(8, user.getCity());
+			ps.setString(9, user.getAddress());
+			ps.setInt(10, user.getPostcode());
 
 		} catch (SQLException se) {
 			logger.error("Can't save user " + user.getID(), se);
