@@ -40,17 +40,17 @@
 			<div class="form-row">
 
 				<div class="form-group col-md-6">
-					<label for="inputname">Nome</label> <input type="nome"
+					<label for="inputname">Nome</label> <input type="text"
 						class="form-control" id="inputname" name="firstName">
 				</div>
 
 				<div class="form-group col-md-6">
-					<label for="inputlastname">Cognome</label> <input type="cognome"
+					<label for="inputlastname">Cognome</label> <input type="text"
 						class="form-control" id="inputlastname" name="lastName">
 				</div>
 
 				<div class="form-group col-md-6">
-					<label for="inputusername">Username</label> <input type="username"
+					<label for="inputusername">Username</label> <input type="text"
 						class="form-control" id="inputusername" name="username">
 				</div>
 
