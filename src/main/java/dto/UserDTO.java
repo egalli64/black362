@@ -6,21 +6,10 @@ import dao.User;
 
 public class UserDTO {
 	
-	private User user;
 	private List<User> utenti;
 	
-	public UserDTO(User user, List<User> utenti) {
-		super();
-		this.user = user;
+	public UserDTO(List<User> utenti) {
 		this.utenti = utenti;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
 	}
 
 	public List<User> getUtenti() {
@@ -33,7 +22,7 @@ public class UserDTO {
 
 	@Override
 	public String toString() {
-		return "UserDTO [user=" + user + ", utenti=" + utenti + "]";
+		return "UserDTO [utenti=" + utenti + "]";
 	}
 	
 	
