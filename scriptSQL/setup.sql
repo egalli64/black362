@@ -6,7 +6,6 @@ use black362;
 drop table if exists dishList;
 drop table if exists dishes;
 drop table if exists bookings;
-
 drop table if exists users;
 drop table if exists admins;
 
