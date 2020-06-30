@@ -54,7 +54,7 @@ create table dishList(
     foreign key(dish_id) references dishes (dish_id),
     foreign key(booking_id) references bookings (booking_id)
 );
-commit
+commit;
 
 
 use black362;
