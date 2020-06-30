@@ -28,6 +28,9 @@ public class Signin extends HttpServlet {
 		UserDao userDao = new UserDao();
 		userDao.save(user);
 		
+		request.setAttribute("user", user);
+		
+		
 		RequestDispatcher rd = request.getRequestDispatcher("/result.jsp");
         rd.forward(request, response);
 	}

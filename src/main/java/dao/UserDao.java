@@ -27,7 +27,7 @@ public class UserDao implements Dao<User> {
 	public Optional<User> get(int id) {
 		try (Connection conn = Connector.getConnection(); //
 				PreparedStatement ps = conn.prepareStatement(GET_BY_PK)) {
-			ps.setLong(1, id);
+			ps.setInt(1, id);
 			try (ResultSet rs = ps.executeQuery()) {
 				if (rs.next()) {
 					LocalDate birthDate = rs.getDate(4).toLocalDate();
