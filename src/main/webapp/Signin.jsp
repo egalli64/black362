@@ -41,17 +41,18 @@
 
 				<div class="form-group col-md-6">
 					<label for="inputname">Nome</label> <input type="text"
-						class="form-control" id="inputname" name="firstName">
+						class="form-control" id="inputname" name="firstName"  required>
 				</div>
 
 				<div class="form-group col-md-6">
 					<label for="inputlastname">Cognome</label> <input type="text"
-						class="form-control" id="inputlastname" name="lastName">
+						class="form-control" id="inputlastname" name="lastName" required>
 				</div>
 
 				<div class="form-group col-md-6">
 					<label for="inputusername">Username</label> <input type="text"
-						class="form-control" id="inputusername" name="username">
+						class="form-control" id="inputusername" name="username" title="8-12 caratteri alfa-numerici"  
+						pattern="[A-Za-z0-9]{8,12}" required>
 				</div>
 
 
@@ -61,17 +62,17 @@
 
 				<div class="form-group col-md-6">
 					<label for="inputnumber">Numero di telefono</label> <input
-						type="text" class="form-control" id="inputnumber" name="telephone">
+						type="text" class="form-control" id="inputnumber" title="solo i numeri" pattern="\d{10,11}" name="telephone">
 				</div>
 
 				<div class="form-group col-md-6">
 					<label for="inputEmail4">Email</label> <input type="email"
-						class="form-control" id="inputEmail4" name="email">
+						class="form-control" id="inputEmail4" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
 				</div>
 
 				<div class="form-group col-md-6">
 					<label for="inputPassword4">Password</label> <input type="password"
-						class="form-control" id="inputPassword4" name="password">
+						class="form-control" id="inputPassword4" name="password" title="caratteri alfa-numerici e simboli:. _ + - @ $ ! ? &" pattern="[A-Za-z0-9._+-@$!?&]{8,15}" required>
 				</div>
 				<div class="form-group col-md-6">
 					<label for="inputCity">Città </label> <input type="text"
@@ -89,7 +90,7 @@
 
 				<div class="form-group col-md-2">
 					<label for="inputZip">CAP</label> <input type="text"
-						class="form-control" id="inputZip" name="cap">
+						class="form-control" id="inputZip" title="solo cinque numeri" pattern="\d{5}" name="cap">
 				</div>
 
 			</div>
