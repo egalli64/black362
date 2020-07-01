@@ -6,9 +6,13 @@
     width: 100%;
     height: 600px;
     margin-bottom: 20px;  
-    background-image: url('https://www.ristorantedarosa.com/files/.thumbs/location/2000x/da-rosa-ristorante-como-veranda-sala-principale-3.jpg');
+    background-image: url('./img/da-rosa-ristorante-como-veranda-sala-principale-3.jpg');
     background-repeat: no-repeat;
     background-size: cover; 
+}
+
+main{
+	width: auto;
 }
 
 .logo {

@@ -43,6 +43,7 @@
      </div>
     </div>
     </section>
+    
     <main>
     
       <div class="row">
@@ -78,9 +79,9 @@
       </div>
     </main>
 
-
 	
 	<div class="containerFooter">
+		<br/>
 		<%@ include file="footer.jsp"%>
 		<br/>
 	</div>
