@@ -19,14 +19,11 @@
    <div class = "headertop"> 
    
    <%@ include file="navbar.jsp"%>
-		
-	<div>
-		<h2>
-			<a href="ristorante.jsp">Ristorante Il Baco</a>
-		</h2>
-	</div>
-	
-		<p>Ci trovi qui: s.s.17 km 31.100 ovest, 67100 L'Aquila AQ</p>
+ <br>
+
+		<div class="alert alert-dark" role="alert">
+  Ci trovi qui: s.s.17 km 31.100 ovest, 67100 L'Aquila AQ <a href="https://goo.gl/maps/BZfkr2JASQp8XRnm7" class="alert-link">Clicca qui per aprire Google Maps</a>.
+</div>
 		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.248579812589!2d13.35497801532216!3d42.358541379186995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132fcd7dc3929a0b%3A0x874baa764efb4026!2sRistorante%20Il%20Baco%20da%20Seta!5e0!3m2!1sit!2sit!4v1593595871306!5m2!1sit!2sit" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 		
 	

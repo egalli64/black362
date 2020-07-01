@@ -23,11 +23,7 @@
    
    <%@ include file="navbar.jsp"%>
 		
-	<div>
-		<h2>
-			<a href="ristorante.jsp">Ristorante Il Baco</a>
-		</h2>
-	</div>
+	
 	
 	<div class="container">
   <img src="img/personale.jpg" alt="personale" class="image">
