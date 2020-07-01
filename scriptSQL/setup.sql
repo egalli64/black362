@@ -19,9 +19,9 @@ create table users(
 	last_name varchar(50) not null,
 	birth_date date,
 	email varchar(50) unique,
-	telephone varchar(30), 
-	username varchar(35) not null unique,
-	password varchar(35) not null,
+	telephone varchar(10), 
+	username varchar(12) not null unique,
+	password varchar(15) not null,
 	city varchar(35),
 	address varchar(30),
 	postcode varchar(5)
@@ -30,14 +30,14 @@ create table users(
 
 create table admins(
 	admin_id integer primary key auto_increment,
-	username varchar(30) not null,
-	password varchar(30) not null
+	username varchar(12) not null,
+	password varchar(15) not null
 );
 
 create table bookings(
 	booking_id integer primary key auto_increment,
 	user_id  integer,
-	status varchar(30),
+	status varchar(11),
 	foreign key(user_id) references users (user_id)
 );
 
@@ -124,11 +124,11 @@ values ('123456','123456');
 insert into admins(username,password) 
 values ('username','password');
 -- insert bookings 
-insert into bookings(user_id,status) values ('1','ordine concluso');
-insert into bookings(user_id,status) values ('2','in preparazione');
-insert into bookings(user_id,status) values ('2','ordine concluso');
-insert into bookings(user_id,status) values ('4','in consegna');
-insert into bookings(user_id,status) values ('5','in consegna');
+insert into bookings(user_id,status) values ('1','DELIVERED');
+insert into bookings(user_id,status) values ('2','PROCESSING');
+insert into bookings(user_id,status) values ('2','DELIVERED');
+insert into bookings(user_id,status) values ('4','SENT');
+insert into bookings(user_id,status) values ('5','SENT');
 
 -- insert dishList
 insert into dishList(booking_id,dish_id,number_dish) values ('1','2','1');

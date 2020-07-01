@@ -71,7 +71,7 @@
 
 				<div class="form-group col-md-6">
 					<label for="inputPassword4">Password</label> <input type="password"
-						class="form-control" id="inputPassword4" name="password" title="Da 8 a 12 caratteri alfanumerici e i seguenti simboli: . _ + - @ $ ! ? &" pattern="[A-Za-z0-9._+-@$!?&]{8,15}" required>
+						class="form-control" id="inputPassword4" name="password" title="Da 8 a 15 caratteri alfanumerici e i seguenti simboli: . _ + - @ $ ! ? &" pattern="[A-Za-z0-9._+-@$!?&]{8,15}" required>
 				</div>
 				<div class="form-group col-md-6">
 					<label for="inputCity">Città </label> <input type="text"
