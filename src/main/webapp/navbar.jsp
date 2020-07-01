@@ -19,8 +19,7 @@
             <a class="nav-item nav-link" href="ristorante.jsp">Home</a>
             <a class="nav-item nav-link" href="#">Menu</a>
             <a class="nav-item nav-link" href="location.jsp">Dove siamo</a>
-            <a class="nav-item nav-link" href="#">Chi siamo</a>
-            <a class="nav-item nav-link" href="#">La nostra storia</a>   
+            <a class="nav-item nav-link" href="ourstory.jsp">Chi siamo</a>   
 	        <a id="colorPrimarySignin" class="nav-item nav-link " href="Signin.jsp?x=a">Registrati</a>
 	        <a id="colorPrimaryLogin" class="nav-item nav-link" href="Login.jsp">Login</a>          
           </div>
