@@ -13,7 +13,7 @@
  <title>Ristorante Il Baco</title>
 </head>
 
-<body>
+<body id="restaurant">
 
  <section class = "header">
    <div class = "headertop"> 

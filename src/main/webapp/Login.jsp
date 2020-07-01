@@ -21,7 +21,7 @@
    </section>
    
   <div>
-    <h2><a href="Ristorante.html">Ristorante Il Baco</a></h2>
+    <h2><a href="ristorante.jsp">Ristorante Il Baco</a></h2>
   </div>
   <div class="divFormLogin">
     <form class="formLogin form-group" method="POST">

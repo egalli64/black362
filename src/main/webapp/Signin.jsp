@@ -13,6 +13,7 @@
 	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 	crossorigin="anonymous"></script>
 <link rel="stylesheet" href="Signin.css">
+
 <meta charset="utf-8">
 
 <title>Registrazione</title>
@@ -29,7 +30,7 @@
 
 	<div>
 		<h2>
-			<a href="Ristorante.html">Ristorante Il Baco</a>
+			<a href="Ristorante.jsp">Ristorante Il Baco</a>
 		</h2>
 	</div>
  			<div class="containerResult">
