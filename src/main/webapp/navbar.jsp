@@ -18,7 +18,7 @@
           <div class="navbar-nav">
             <a class="nav-item nav-link active" href="ristorante.jsp">Home <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="#">Menu</a>
-            <a class="nav-item nav-link" href="#">Dove siamo</a>
+            <a class="nav-item nav-link" href="location.jsp">Dove siamo</a>
             <a class="nav-item nav-link" href="#">Chi siamo</a>
             <a class="nav-item nav-link" href="#">La nostra storia</a>   
 	        <a id="colorPrimarySignin" class="nav-item nav-link " href="Signin.jsp?x=a">Registrati</a>
