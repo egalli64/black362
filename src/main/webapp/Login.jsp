@@ -24,7 +24,7 @@
     <h2><a href="ristorante.jsp">Ristorante Il Baco</a></h2>
   </div>
   <div class="divFormLogin">
-    <form class="formLogin form-group" method="POST">
+    <form class="formLogin form-group" action="login" method="POST">
       <h5 class="card-title">Inserisci i tuoi dati per accedere</h5>
       <div class="form-group">
         <label for="exampleDropdownFormEmail2">Username</label>
