@@ -11,6 +11,15 @@
 
 
 <body>
+
+<section class = "header">
+   <div class = "headertop"> 
+   
+   <%@ include file="navbar.jsp"%>
+   
+   </div>
+   </section>
+   
   <div>
     <h2><a href="Ristorante.html">Ristorante Il Baco</a></h2>
   </div>

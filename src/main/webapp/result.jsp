@@ -9,6 +9,12 @@
 <title>Result</title>
 </head>
 <body>
+	<section class = "header">
+   		<div class = "headertop"> 
+  			 <%@ include file="navbar.jsp"%>
+   		</div>
+   	</section>
+   	
 	<h1>Il ristorante Il Baco ti da il benvenuto,
 	
 	<%

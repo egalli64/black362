@@ -10,9 +10,15 @@
  type="text/css"
  href="Signin.css">
   <link rel="stylesheet" type="text/css" href="respond.css">
- <title>Ristorante</title>
+ <title>Ristorante Il Baco</title>
 </head>
 <body>
+	<section class = "header">
+   		<div class = "headertop"> 
+  			 <%@ include file="navbar.jsp"%>
+   		</div>
+   	</section>
+   	
 	<div class="">
 
 			<h2><a href="Ristorante.html">Ristorante Il Baco</a></h2>
