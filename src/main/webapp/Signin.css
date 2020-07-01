@@ -1,6 +1,6 @@
 .containerSignin{
 	margin: auto; /*center a block,  auto in both right and left margins take up the "available" space equally*/
-    width: 550px;
+    width: 400px;
     padding:35px 28px 50px 28px;
     border-style:solid;
     border-color: rgb(175, 172, 172);

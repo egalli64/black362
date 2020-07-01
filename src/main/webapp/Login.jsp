@@ -35,7 +35,7 @@
         <input type="password" name="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password" required>
       </div>
       <div class="containerCustomButton">
-        <button type="submit" class="btn custumButton">Accedi</button>
+        <button type="submit" class="custumButton">Accedi</button>
         <div>Prima volta su Baco? <a href="Signin.jsp">Crea un nuovo account</a></div>
       </div>
     </form>

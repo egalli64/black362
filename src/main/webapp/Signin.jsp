@@ -33,16 +33,8 @@
 			<a href="ristorante.jsp">Ristorante Il Baco</a>
 		</h2>
 	</div>
- 			<div class="containerResult">
-				<c:if test="${param.x =='a'}">
-					<h5>success </h5>
-				</c:if>
-				<c:if test="${param.x =='b'}">
-					<h5>not success </h5>
-				</c:if>				
-			</div>
 
-	<div class="container mt-5 containerSignin">
+	<div class="mt-5 containerSignin">
 		<form action="signin" method="post">
 			<div class="form-row">
 
