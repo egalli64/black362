@@ -19,8 +19,8 @@
     padding-top: 300px;
 }
 
-.container_main {
-    margin: auto;
+.card {
+	margin: 0 auto;
 }
 
 #colorPrimarySignin {
