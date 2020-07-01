@@ -10,13 +10,13 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="ristorante.jsp">Ristorante Il Baco</a>
+        <a class="navbar-brand" href="ristorante.jsp" id="logo">Ristorante Il Baco</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="ristorante.jsp">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="ristorante.jsp">Home</a>
             <a class="nav-item nav-link" href="#">Menu</a>
             <a class="nav-item nav-link" href="location.jsp">Dove siamo</a>
             <a class="nav-item nav-link" href="#">Chi siamo</a>

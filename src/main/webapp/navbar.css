@@ -1,6 +1,17 @@
+#logo:hover {
+	transform: scale(1.1);
+}
+
 #colorPrimarySignin {
 	color:#427bff;
 }
 #colorPrimaryLogin {
 	color:#427bff;
+}
+
+#colorPrimarySignin:hover {
+	color:#5BADF4;
+}
+#colorPrimaryLogin:hover {
+	color:#5BADF4;
 }

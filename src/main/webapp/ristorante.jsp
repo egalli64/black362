@@ -18,7 +18,7 @@
  <section class = "header">
    <div class = "headertop"> 
    
-   <%@ include file="navbar.jsp"%>
+   	<%@ include file="navbar.jsp"%>
    <!--     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Ristorante Il Baco</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,11 +34,7 @@
 	        <a id="colorPrimarySignin" class="nav-item nav-link " href="Signin.jsp?x=a">Registrati</a>
 	        <a id="colorPrimaryLogin" class="nav-item nav-link" href="Login.jsp">Login</a>          
           </div>
-         
         </div>
-
-
-
       </nav> -->
     </div>
     <div class="container_jumbo">
