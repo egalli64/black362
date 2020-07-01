@@ -22,8 +22,6 @@ public class UserDao implements Dao<User> {
 	private static final String INSERT = "INSERT INTO users(first_name, last_name, birth_date, email, telephone, username, password, city, address, postcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	private static final String UPDATE = "UPDATE coders SET email = ?, telephone = ?, password = ?, city = ?, address = ?, postcode = ? WHERE coder_id = ?";
 	private static final String DELETE = "DELETE FROM users WHERE user_id = ?";
-	
-	private static final String GET_CHECK = "SELECT email, username FROM users";
 
 	@Override
 	public Optional<User> get(int id) {
