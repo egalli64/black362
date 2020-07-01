@@ -139,7 +139,7 @@ public class UserDao implements Dao<User>, AutoCloseable {
 			ps.setString(1, username);
 			try (ResultSet rs = ps.executeQuery()) {
 				if (rs.next()) {
-					return Boolean.valueOf(rs.getString(1));
+					return Boolean.parseBoolean(rs.getString(1));
 				}
 			}
 		} catch (SQLException se) {
@@ -154,7 +154,7 @@ public class UserDao implements Dao<User>, AutoCloseable {
 			ps.setString(2, password);
 			try (ResultSet rs = ps.executeQuery()) {
 				if (rs.next()) {
-					return Boolean.valueOf(rs.getString(1));
+					return Boolean.parseBoolean(rs.getString(1));
 				}
 			}
 		} catch (SQLException se) {
