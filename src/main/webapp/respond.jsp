@@ -19,7 +19,7 @@
 
 			<div class="classMessage m-5">
 				
-					<h3> email già esistente</h3>
+					<h3> Email già esistente</h3>
 					<button type="button" class="btn btn-dark"> <a href="Login.jsp">Effettua login</a></button>			
 						
 		
