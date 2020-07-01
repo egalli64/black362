@@ -44,7 +44,7 @@
     </div>
     </section>
     <main>
-      <div class="row container container_main">
+      <div class="row container_main">
         <div class="col-lg-6 col-sm-12">
           <div class="card" style="width: 30rem;">
             <img src="img/staff.jpg" class="card-img-top img-fluid" alt="...">
