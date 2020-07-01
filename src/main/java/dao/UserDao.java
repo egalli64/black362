@@ -1,5 +1,6 @@
 package dao;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -11,10 +12,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.sql.DataSource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class UserDao implements Dao<User> {
+public class UserDao implements Dao<User>, AutoCloseable {
 	private static Logger logger = LoggerFactory.getLogger(UserDao.class);
 
 	private static final String GET_BY_PK = "SELECT * FROM users WHERE user_id = ?";
@@ -22,6 +25,16 @@ public class UserDao implements Dao<User> {
 	private static final String INSERT = "INSERT INTO users(first_name, last_name, birth_date, email, telephone, username, password, city, address, postcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	private static final String UPDATE = "UPDATE coders SET email = ?, telephone = ?, password = ?, city = ?, address = ?, postcode = ? WHERE coder_id = ?";
 	private static final String DELETE = "DELETE FROM users WHERE user_id = ?";
+	
+	private Connection conn;
+	
+	public UserDao (DataSource ds) {
+		try {
+            this.conn = ds.getConnection();
+        } catch (SQLException se) {
+            throw new IllegalStateException("Database issue " + se.getMessage());
+        }
+	}
 
 	@Override
 	public Optional<User> get(int id) {
@@ -67,9 +80,8 @@ public class UserDao implements Dao<User> {
 
 	@Override
 	public void save(User user) {
-		try (Connection conn = Connector.getConnection(); 
-			PreparedStatement ps = conn.prepareStatement(INSERT)) {
-			
+		try (Connection conn = Connector.getConnection(); PreparedStatement ps = conn.prepareStatement(INSERT)) {
+
 			ps.setString(1, user.getFirstName());
 			ps.setString(2, user.getLastName());
 			ps.setDate(3, Date.valueOf(user.getBirthDate()));
@@ -80,7 +92,7 @@ public class UserDao implements Dao<User> {
 			ps.setString(8, user.getCity());
 			ps.setString(9, user.getAddress());
 			ps.setInt(10, user.getPostcode());
-			
+
 			ps.executeUpdate();
 
 		} catch (SQLException se) {
@@ -120,5 +132,14 @@ public class UserDao implements Dao<User> {
 		} catch (SQLException se) {
 			logger.error("Can't delete user " + id, se);
 		}
+	}
+
+	@Override
+	public void close() throws IOException {
+		try {
+            conn.close();
+        } catch (SQLException se) {
+            throw new IllegalStateException("Database issue " + se.getMessage());
+        }
 	}
 }
