@@ -74,5 +74,10 @@
       </div>
     </main>
 
+	
+	<div class="containerFooter">
+		<%@ include file="footer.jsp"%>
+		<br/>
+	</div>
 </body>
 </html> 

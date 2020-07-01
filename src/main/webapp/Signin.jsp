@@ -40,7 +40,7 @@
 
 				<div class="form-group col-md-6">
 					<label for="inputname">Nome</label> <input type="text"
-						class="form-control" id="inputname" name="firstName"  required>
+						class="form-control" id="inputname" name="firstName" required>
 				</div>
 
 				<div class="form-group col-md-6">
