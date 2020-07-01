@@ -32,10 +32,19 @@
 
 .containerSignin{
 	margin: auto; /*center a block,  auto in both right and left margins take up the "available" space equally*/
-    width: 400px;
+    width: 550px;
     padding:35px 28px 50px 28px;
     border-style:solid;
     border-color: rgb(175, 172, 172);
     border-width: 1px ;
     border-radius:3px;
+}
+
+h2{
+    text-align: center;
+    padding:25px 0 30px 0;
+    border-bottom: 5px black solid;
+}
+h2 a{
+    color: inherit; 
 }

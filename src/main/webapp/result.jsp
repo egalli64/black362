@@ -18,7 +18,10 @@
    		</div>
    	</section>
    	
-   	<div class="containerSignin">
+   	<div>
+    	<h2><a href="ristorante.jsp">Ristorante Il Baco</a></h2>
+    	
+    	<div class="containerSignin">
 		<h1>Il ristorante Il Baco ti da il benvenuto,
 		
 			<%
@@ -29,5 +32,7 @@
 		</h1>
 	
 	</div>
+  	</div>
+   	
 </body>
 </html>
