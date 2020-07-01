@@ -30,7 +30,7 @@
 
 	<div>
 		<h2>
-			<a href="Ristorante.jsp">Ristorante Il Baco</a>
+			<a href="ristorante.jsp">Ristorante Il Baco</a>
 		</h2>
 	</div>
  			<div class="containerResult">
