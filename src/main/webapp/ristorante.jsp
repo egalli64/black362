@@ -54,7 +54,7 @@
               <p class="card-text">La storia inizia nel 1977 quando mamma Rosa preparava il pane in casa nel loro forno a legna custodito gelosamente nella taverna di famiglia.
                 In quel tempo preparava pizze, biscotti e torte per amici e parenti.
               </p>
-              <a href="#" class="btn btn-primary">Chi siamo</a>
+              <a href="ourstory.jsp" class="btn btn-primary">Chi siamo</a>
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@
                 Consegna gratuita per tutti gli ordini superiori a 15€.
                 Per gli ordini sotto i 15€ la consegna costa solo 3€
                 e se hai qualche richiesta speciale… chiamaci!</p>
-              <a href="#" class="btn btn-primary">Vai al menù</a>
+              <a href="menu.jsp" class="btn btn-primary">Vai al menù</a>
             </div>
           </div>
         </div>

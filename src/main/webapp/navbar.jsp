@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="navbar.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="ristorante.jsp" id="logo">Ristorante Il Baco</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-item nav-link" href="ristorante.jsp">Home</a>
-            <a class="nav-item nav-link" href="#">Menu</a>
+            <a class="nav-item nav-link" href="menu.jsp">Menu</a>
             <a class="nav-item nav-link" href="location.jsp">Dove siamo</a>
             <a class="nav-item nav-link" href="ourstory.jsp">Chi siamo</a>   
 	        <a id="colorPrimarySignin" class="nav-item nav-link " href="Signin.jsp?x=a">Registrati</a>
@@ -25,8 +25,6 @@
           </div>
          
         </div>
-
-
 
       </nav>
 
