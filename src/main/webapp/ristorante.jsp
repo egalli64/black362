@@ -51,8 +51,10 @@
             <img src="img/staff.jpg" class="card-img-top img-fluid" alt="...">
             <div class="card-body">
               <h5 class="card-title">Il nostro staff</h5>
-              <p class="card-text">La storia inizia nel 1977 quando mamma Rosa preparava il pane in casa nel loro forno a legna custodito gelosamente nella taverna di famiglia.
-                In quel tempo preparava pizze, biscotti e torte per amici e parenti.
+              <p class="card-text">Le origini: Il ristorante Il Baco nasce nel 1800. Inizialmente venivano serviti solo bachi da seta e
+    questo faceva allontanare possibli. Fu cosi che Pierpaolo Bacolino
+     (Fondatore del ristorante) decise di aggiornare il menu e quindi smettere di morire di fame. D'allora, gli affari
+     vanno a gonfie vele.
               </p>
               <a href="ourstory.jsp" class="btn btn-primary">Chi siamo</a>
             </div>
@@ -64,8 +66,9 @@
             <div class="card-body">
               <h5 class="card-title">Il nostro menù</h5>
               <p class="card-text">Il Baco riapre con il nuovo servizio a domicilio!
-                Chiama o scrivici su whatsapp al +394444444.
+                Chiama o scrivici su whatsapp al 3339857424.
                 Consegna gratuita per tutti gli ordini superiori a 15€.
+                Se esegui un ordine superiore a 100 euro, le bibite le paghiamo noi!.
                 Per gli ordini sotto i 15€ la consegna costa solo 3€
                 e se hai qualche richiesta speciale… chiamaci!</p>
               <a href="menu.jsp" class="btn btn-primary">Vai al menù</a>
