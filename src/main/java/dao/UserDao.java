@@ -38,8 +38,7 @@ public class UserDao implements Dao<User>, AutoCloseable {
 
 	@Override
 	public Optional<User> get(int id) {
-		try (Connection conn = Connector.getConnection(); //
-				PreparedStatement ps = conn.prepareStatement(GET_BY_PK)) {
+		try (PreparedStatement ps = conn.prepareStatement(GET_BY_PK)) {
 			ps.setInt(1, id);
 			try (ResultSet rs = ps.executeQuery()) {
 				if (rs.next()) {
@@ -61,8 +60,7 @@ public class UserDao implements Dao<User>, AutoCloseable {
 	public List<User> getAll() {
 		List<User> results = new ArrayList<>();
 
-		try (Connection conn = Connector.getConnection();
-				Statement stmt = conn.createStatement();
+		try (Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(GET_ALL)) {
 			while (rs.next()) {
 				LocalDate birthDate = rs.getDate(4).toLocalDate();
@@ -80,7 +78,7 @@ public class UserDao implements Dao<User>, AutoCloseable {
 
 	@Override
 	public void save(User user) {
-		try (Connection conn = Connector.getConnection(); PreparedStatement ps = conn.prepareStatement(INSERT)) {
+		try (PreparedStatement ps = conn.prepareStatement(INSERT)) {
 
 			ps.setString(1, user.getFirstName());
 			ps.setString(2, user.getLastName());
@@ -102,8 +100,7 @@ public class UserDao implements Dao<User>, AutoCloseable {
 
 	@Override
 	public void update(User user) {
-		try (Connection conn = Connector.getConnection(); //
-				PreparedStatement ps = conn.prepareStatement(UPDATE)) {
+		try (PreparedStatement ps = conn.prepareStatement(UPDATE)) {
 			ps.setString(1, user.getEmail());
 			ps.setString(2, user.getTelephone());
 			ps.setString(3, user.getPassword());
@@ -122,8 +119,7 @@ public class UserDao implements Dao<User>, AutoCloseable {
 
 	@Override
 	public void delete(int id) {
-		try (Connection conn = Connector.getConnection(); //
-				PreparedStatement ps = conn.prepareStatement(DELETE)) {
+		try (PreparedStatement ps = conn.prepareStatement(DELETE)) {
 			ps.setInt(1, id);
 			int count = ps.executeUpdate();
 			if (count != 1) {
