@@ -26,9 +26,9 @@ public class UserDao implements Dao<User>, AutoCloseable {
 	private static final String UPDATE = "UPDATE coders SET email = ?, telephone = ?, password = ?, city = ?, address = ?, postcode = ? WHERE coder_id = ?";
 	private static final String DELETE = "DELETE FROM users WHERE user_id = ?";
 	
-	private static final String DOES_USERNAME_EXIST = "",
-								IS_PASSWORD_OK = "",
-								GET_BY_USERNAME = "";
+	private static final String DOES_USERNAME_EXIST = "SELECT CASE WHEN EXISTS ( SELECT 1 FROM users WHERE username = ? ) THEN 'true' ELSE 'false' END;",
+								IS_PASSWORD_OK = "SELECT CASE WHEN EXISTS ( SELECT 1 FROM users WHERE username = ? AND password = ? ) THEN 'true' ELSE 'false' END;",
+								GET_BY_USERNAME = "SELECT * FROM users WHERE username = ?";
 	
 	private Connection conn;
 	
@@ -135,12 +135,49 @@ public class UserDao implements Dao<User>, AutoCloseable {
 	}
 
 	public boolean usernameExists(String username) {
+		try (PreparedStatement ps = conn.prepareStatement(DOES_USERNAME_EXIST)) {
+			ps.setString(1, username);
+			try (ResultSet rs = ps.executeQuery()) {
+				if (rs.next()) {
+					return Boolean.valueOf(rs.getString(1));
+				}
+			}
+		} catch (SQLException se) {
+			logger.error("Can't check username" + username, se);
+		}
+		
 		return false;
 	}
 	public boolean passwordCheck(String username, String password) {
+		try (PreparedStatement ps = conn.prepareStatement(IS_PASSWORD_OK)) {
+			ps.setString(1, username);
+			ps.setString(2, password);
+			try (ResultSet rs = ps.executeQuery()) {
+				if (rs.next()) {
+					return Boolean.valueOf(rs.getString(1));
+				}
+			}
+		} catch (SQLException se) {
+			logger.error("Can't check password of username" + username, se);
+		}
 		return false;
 	}
 	public User getByUsername(String username) {
+		try (PreparedStatement ps = conn.prepareStatement(GET_BY_USERNAME)) {
+			ps.setString(1, username);
+			try (ResultSet rs = ps.executeQuery()) {
+				if (rs.next()) {
+					LocalDate birthDate = rs.getDate(4).toLocalDate();
+					User user = new User(rs.getInt(1), rs.getString(2), rs.getString(3), birthDate, rs.getString(5),
+							rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10),
+							rs.getInt(11));
+					return user;
+				}
+			}
+		} catch (SQLException se) {
+			logger.error("Can't get user " + username, se);
+		}
+
 		return null;
 	}
 	
