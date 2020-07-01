@@ -1,3 +1,7 @@
+body{
+	background-image: url('./img/da-rosa-ristorante-como-veranda-sala-principale-4.jpg');
+}
+
 .containerSignin{
 	margin: auto; /*center a block,  auto in both right and left margins take up the "available" space equally*/
     width: 600px;
@@ -6,6 +10,7 @@
     border-color: rgb(175, 172, 172);
     border-width: 1px;
     border-radius:3px;
+    background-color: white;
 }
 
 h2{

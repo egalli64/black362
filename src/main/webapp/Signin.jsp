@@ -19,7 +19,6 @@
 <title>Registrazione</title>
 </head>
 
-
 <body>
 
 	<section class = "header">
@@ -27,12 +26,6 @@
   			 <%@ include file="navbar.jsp"%>
    		</div>
    	</section>
-
-	<div>
-		<h2>
-			<a href="ristorante.jsp">Ristorante Il Baco</a>
-		</h2>
-	</div>
 
 	<div class="mt-5 containerSignin">
 		<form action="signin" method="post">

@@ -7,6 +7,12 @@
 <title>Menu</title>
 </head>
 <body>
-
+	<section class = "header">
+   		<div class = "headertop"> 
+   			<%@ include file="navbar.jsp"%>
+   		</div>
+   	</section>
+   	
+   	
 </body>
 </html>
