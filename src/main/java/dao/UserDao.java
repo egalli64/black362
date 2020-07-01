@@ -26,6 +26,10 @@ public class UserDao implements Dao<User>, AutoCloseable {
 	private static final String UPDATE = "UPDATE coders SET email = ?, telephone = ?, password = ?, city = ?, address = ?, postcode = ? WHERE coder_id = ?";
 	private static final String DELETE = "DELETE FROM users WHERE user_id = ?";
 	
+	private static final String DOES_USERNAME_EXIST = "",
+								IS_PASSWORD_OK = "",
+								GET_BY_USERNAME = "";
+	
 	private Connection conn;
 	
 	public UserDao (DataSource ds) {
@@ -130,6 +134,17 @@ public class UserDao implements Dao<User>, AutoCloseable {
 		}
 	}
 
+	public boolean usernameExists(String username) {
+		return false;
+	}
+	public boolean passwordCheck(String username, String password) {
+		return false;
+	}
+	public User getByUsername(String username) {
+		return null;
+	}
+	
+	
 	@Override
 	public void close() throws IOException {
 		try {
