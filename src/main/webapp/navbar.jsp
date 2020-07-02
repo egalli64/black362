@@ -24,7 +24,7 @@
             
 			<c:if test="${ sessionScope.user != null }">
 				<a class="nav-item nav-link" href="#">User is ${sessionScope.user}</a>
-				<a id="logout" class="nav-item nav-link" href="Login.jsp">Logout</a>
+				<a id="logout" class="nav-item nav-link" href="ristorante.jsp" onClick=<%session.invalidate();%>>Logout</a>
 			</c:if>
 			<c:if test="${ sessionScope.user == null }">
 				<a id="colorPrimarySignin" class="nav-item nav-link " href="Signin.jsp?x=a">Registrati</a>
