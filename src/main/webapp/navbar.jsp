@@ -21,11 +21,12 @@
             <a class="nav-item nav-link" href="menu.jsp">Menu</a>
             <a class="nav-item nav-link" href="location.jsp">Dove siamo</a>
             <a class="nav-item nav-link" href="ourstory.jsp">Chi siamo</a>
-			<c:if test="${session != null}">
+            <p>User is ${sessionScope.user}</p>
+			<c:if test="${user != null}">
 				<p>You are logged as X<p>
 			</c:if>
 	        <a id="colorPrimarySignin" class="nav-item nav-link " href="Signin.jsp?x=a">Registrati</a>
-	        <a id="colorPrimaryLogin" class="nav-item nav-link" href="Login.jsp">Login</a>          
+	        <a id="colorPrimaryLogin" class="nav-item nav-link" href="Login.jsp">Login</a>
           </div>
          
         </div>
