@@ -9,9 +9,18 @@
 	color:#427bff;
 }
 
+#logout{
+	color: #427bff;
+}
+
 #colorPrimarySignin:hover {
 	color:#5BADF4;
 }
 #colorPrimaryLogin:hover {
 	color:#5BADF4;
 }
+
+#logout:hover{
+	color:#5BADF4;
+}
+
