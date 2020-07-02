@@ -1,0 +1,16 @@
+body{
+	background-image: url('./img/da-rosa-ristorante-como-veranda-sala-esterna-4.jpg');
+	background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+.containerMap{
+	margin: auto; /*center a block,  auto in both right and left margins take up the "available" space equally*/
+    width: 600px;
+    padding:35px 28px 50px 28px;
+    border-style:solid;
+    border-color: rgb(175, 172, 172);
+    border-width: 1px;
+    border-radius:3px;
+    background-color: white;
+}
