@@ -24,7 +24,7 @@
             
 			<c:if test="${ sessionScope.user != null }">
 				<a class="nav-item nav-link" href="#">User is ${sessionScope.user}</a>
-				<a id="logout" class="nav-item nav-link" href="ristorante.jsp">
+				<a id="logout" class="nav-item nav-link" href="logout">
 					Logout
 				</a>
 			</c:if>
