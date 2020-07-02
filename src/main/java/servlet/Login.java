@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import dao.User;
@@ -25,9 +26,7 @@ public class Login extends HttpServlet {
 	@Resource(name = "jdbc/black362")
     private DataSource ds;
        
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//username e password
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try (UserDao userDao = new UserDao(ds)) {
 			String username = request.getParameter("username");
 			String password = request.getParameter("password");
@@ -35,6 +34,10 @@ public class Login extends HttpServlet {
 			if (userDao.usernameExists(username)) {
 				if (userDao.passwordCheck(username, password)) {
 					User user = userDao.getByUsername(username);
+					
+					HttpSession session = request.getSession(true);
+					session.setAttribute("user", username);
+					
 					request.setAttribute("message", "Bentornato " + username);
 				} else {
 					request.setAttribute("message", "La password inserita non è corretta");
@@ -47,5 +50,10 @@ public class Login extends HttpServlet {
 	        rd.forward(request, response);
 		}
 	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        doGet(request, response);
+    }
 
 }

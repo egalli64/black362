@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -19,7 +20,10 @@
             <a class="nav-item nav-link" href="ristorante.jsp">Home</a>
             <a class="nav-item nav-link" href="menu.jsp">Menu</a>
             <a class="nav-item nav-link" href="location.jsp">Dove siamo</a>
-            <a class="nav-item nav-link" href="ourstory.jsp">Chi siamo</a>   
+            <a class="nav-item nav-link" href="ourstory.jsp">Chi siamo</a>
+			<c:if test="${session != null}">
+				<p>You are logged as X<p>
+			</c:if>
 	        <a id="colorPrimarySignin" class="nav-item nav-link " href="Signin.jsp?x=a">Registrati</a>
 	        <a id="colorPrimaryLogin" class="nav-item nav-link" href="Login.jsp">Login</a>          
           </div>
